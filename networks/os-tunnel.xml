@@ -1,0 +1,5 @@
+  <network>
+    <name>os-tunnel</name>
+    <bridge name='virbr-os-tunnel' stp='on' delay='0'/>
+  </network>
+
