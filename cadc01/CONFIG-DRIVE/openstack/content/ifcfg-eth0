@@ -1,0 +1,9 @@
+DEVICE="eth0"
+BOOTPROTO="static"
+ONBOOT="yes"
+TYPE="Ethernet"
+IPADDR="10.199.1.86"
+NETMASK="255.255.255.0"
+GATEWAY="10.199.1.1"
+DNS1="8.8.8.8"
+

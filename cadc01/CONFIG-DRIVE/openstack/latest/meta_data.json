@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "path": "/etc/sysconfig/network-scripts/ifcfg-eth0",
+      "content_path": "/content/ifcfg-eth0"
+    }
+  ],
+  "uuid": "83679162-1378-4288-a2d4-70e13ec132aa"
+}
+

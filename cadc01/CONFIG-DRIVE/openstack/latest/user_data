@@ -1,0 +1,19 @@
+#cloud-config
+
+timezone: Canada/Eastern
+apt_update: true
+hostname: cadc01
+fqdn: cadc01.lab.local
+manage_etc_hosts: true
+
+password: lab1
+chpasswd: {expire: False}
+ssh_pwauth: True
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmHej0UJwI3HODvpn7vAXwe1NK7VLcXkszVnBDohNyPmS7arodGdvlsHtXgQPy+Tr0bTy2cm86KQIzdP0wLDt77MwFo1iwDwJ+/2YHXzQDqnVqgXbF1OvoVAKVXgiq9mRxiCMveHmdLsUYb/NOmkE/4yCk62ftE/Yi1zNjpbZJ8qiuDzdHIokaLEInWOp+4uBht0ERMMERqij5yUZZwN453Wmg95J1i+Tg7ftbGIBQYIh1rQxxf2jobQPWjjtp5wmrWzUutCMvc0gaqJ6veNEbJXI+tp7vummMYin3Pl+sUssEwHPYZuYK+Ph00Z0/H4+pWrJpafmfabgvIOW4ANT9 lab@mvkvm02
+
+bootcmd:
+  - ifdown eth0
+  - ifup eth0
+
+
