@@ -5,7 +5,7 @@
       "content_path": "/content/eth0.cfg"
     }
   ],
-  "hostname": "api01.maison.lab",
+  "hostname": "api01.lab.local",
   "name": "api01",
   "public_keys": {
     "mykey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1IojoidHxkK6pyfBLR9lrmn/wTMPjIwQfjFU9HW6hdgFoLGkaeT5aDWYbkJxGyFBOiAl83h5s/PvQkld5UZ9iNW0C1L/3NtBcUH3lN1BrpCt0fBIe5dLQxe+ldDAR7NI83T3KZAg97RC+H7u/KIhS5hMgJcypWOl/xkEmhc/tPPI7fWuBcFArPxLOM8kTJgW2Oj7k+HUjJSFu60s33qxxXPvfBDkTwxeaWUgslTn0sVo7pXJfVQMTVnivkE2o9VgIHFaB0/H9GQzK/5NWBwSWB5JB9k8dK5d2iEW1nIbCVOdWiXQhhkoNK1nvGSGAu7hmD9Fl2pnYjo3StJVj2EkZ lab@kvm01"
