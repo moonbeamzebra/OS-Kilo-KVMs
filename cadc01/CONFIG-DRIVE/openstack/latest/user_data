@@ -16,4 +16,10 @@ bootcmd:
   - ifdown eth0
   - ifup eth0
 
+runcmd:
+ - rhnreg_ks --norhnsd --username marc.vaudry --password bell1234!
+ - yum clean all
+ - yum makecache
+
+
 
