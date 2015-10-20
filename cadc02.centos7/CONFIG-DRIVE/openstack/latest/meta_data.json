@@ -1,0 +1,15 @@
+{
+ "files": [
+    {
+      "path": "/etc/sysconfig/network-scripts/ifcfg-eth1",
+      "content_path": "/content/ifcfg-eth1"
+    }
+  ],
+  "hostname": "cadc02.lab.local",
+  "name": "cadc02",
+  "public_keys": {
+    "mykey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmHej0UJwI3HODvpn7vAXwe1NK7VLcXkszVnBDohNyPmS7arodGdvlsHtXgQPy+Tr0bTy2cm86KQIzdP0wLDt77MwFo1iwDwJ+/2YHXzQDqnVqgXbF1OvoVAKVXgiq9mRxiCMveHmdLsUYb/NOmkE/4yCk62ftE/Yi1zNjpbZJ8qiuDzdHIokaLEInWOp+4uBht0ERMMERqij5yUZZwN453Wmg95J1i+Tg7ftbGIBQYIh1rQxxf2jobQPWjjtp5wmrWzUutCMvc0gaqJ6veNEbJXI+tp7vummMYin3Pl+sUssEwHPYZuYK+Ph00Z0/H4+pWrJpafmfabgvIOW4ANT9 lab@mvkvm02"
+  },
+  "uuid": "83679162-1378-4288-a2d4-70e13ec132aa"
+}
+
