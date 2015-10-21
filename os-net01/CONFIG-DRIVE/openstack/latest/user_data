@@ -1,21 +1,25 @@
 #cloud-config
 
 timezone: Canada/Eastern
+apt_update: true
+apt_upgrade: true
 
 users:
   - name: osu
     gecos: osu
     groups: sudo
+    sudo: ALL=(ALL) NOPASSWD:ALL
     shell: /bin/bash
     passwd: $6$m/ToT80gpHPZka$2EaO1TYTpEcDKwNe/wBP3jnINtGQxNv0c4AcsTTpKlihHC9I7r/yactnYZER6.yn0jRO8zP9oB8t.TlSz8atp.
     lock-passwd: false
 
 packages:
  - htop
+ - git
 runcmd:
  - "echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg"
  - "sudo dpkg-reconfigure -f noninteractive cloud-init"
- - "sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost net01/' /etc/hosts"
+ - "sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost api01/' /etc/hosts"
  - "sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config"
 
  - service ssh restart

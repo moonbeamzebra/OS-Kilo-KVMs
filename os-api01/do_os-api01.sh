@@ -18,6 +18,7 @@ virt-install \
 --disk path=$IMAGES/$hn.qcow2 \
 --disk path=$ISOs/drive-ubuntu.iso \
 --network bridge=br0  \
+--network bridge=br1  \
 --graphics vnc,listen=0.0.0.0 \
 --noautoconsole \
 --import
