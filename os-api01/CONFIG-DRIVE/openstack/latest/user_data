@@ -29,6 +29,7 @@ runcmd:
  - service ssh restart
  - sudo usermod -aG docker osu
  - su - osu
+ - cd /home/osu
  - git clone https://github.com/moonbeamzebra/OpenStack-On-Docker.git
  - wget -qO- https://get.docker.com/ | sh
 
