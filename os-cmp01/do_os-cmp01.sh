@@ -11,7 +11,7 @@ qemu-img create -f qcow2 -b $IMAGES/trusty-server-cloudimg-amd64-disk1.img $IMAG
 virt-install \
 --name "$hn" \
 --virt-type kvm \
---vcpus 8 \
+--vcpus 4 \
 --ram 8192 \
 --os-type=linux \
 --os-variant=ubuntutrusty \
