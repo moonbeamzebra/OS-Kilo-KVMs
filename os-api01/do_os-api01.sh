@@ -19,6 +19,7 @@ virt-install \
 --disk path=$ISOs/drive-ubuntu.iso \
 --network bridge=br0  \
 --network bridge=br1  \
+--network bridge=br1  \
 --graphics vnc,listen=0.0.0.0 \
 --noautoconsole \
 --import

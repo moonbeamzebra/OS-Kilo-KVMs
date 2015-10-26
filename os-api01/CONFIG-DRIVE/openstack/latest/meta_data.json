@@ -7,6 +7,10 @@
     {
       "path": "/etc/network/interfaces.d/eth1.cfg",
       "content_path": "/content/eth1.cfg"
+    },
+    {
+      "path": "/etc/network/interfaces.d/eth2.cfg",
+      "content_path": "/content/eth2.cfg"
     }
   ],
   "public_keys": {
