@@ -7,6 +7,7 @@ export ISOs=./ISOs
 mkisofs -R -V config-2 -o $ISOs/drive-ubuntu.iso $CONFIG_DRIVE
 
 qemu-img create -f qcow2 -b $IMAGES/trusty-server-cloudimg-amd64-disk1.img $IMAGES/$hn.qcow2 50G
+qemu-img create -f qcow2 $IMAGES/$hn.vdb.qcow2 50G
 
 virt-install \
 --name "$hn" \
@@ -16,6 +17,7 @@ virt-install \
 --os-type=linux \
 --os-variant=ubuntutrusty \
 --disk path=$IMAGES/$hn.qcow2 \
+--disk path=$IMAGES/$hn.vdb.qcow2 \
 --disk path=$ISOs/drive-ubuntu.iso \
 --network bridge=br0  \
 --network bridge=br1  \
