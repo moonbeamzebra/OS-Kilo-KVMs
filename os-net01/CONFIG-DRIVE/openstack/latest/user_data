@@ -2,7 +2,9 @@
 
 timezone: Canada/Eastern
 apt_update: true
-apt_upgrade: true
+hostname: net01
+fqdn: net01.lab.local
+manage_etc_hosts: true
 
 users:
   - name: osu
@@ -16,11 +18,14 @@ users:
 packages:
  - htop
  - git
+ - makepp
 runcmd:
  - "echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg"
  - "sudo dpkg-reconfigure -f noninteractive cloud-init"
- - "sed -i 's/127.0.0.1 localhost/127.0.0.1 localhost api01/' /etc/hosts"
  - "sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config"
-
  - service ssh restart
+ - su - osu
+ - cd /home/osu
+ - git clone https://github.com/moonbeamzebra/OpenStack-On-Docker.git
+
 

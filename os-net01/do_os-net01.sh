@@ -11,15 +11,15 @@ qemu-img create -f qcow2 -b $IMAGES/trusty-server-cloudimg-amd64-disk1.img $IMAG
 virt-install \
 --name "$hn" \
 --virt-type kvm \
---vcpus 2 \
---ram 2048 \
+--vcpus 4 \
+--ram 8192 \
 --os-type=linux \
 --os-variant=ubuntutrusty \
 --disk path=$IMAGES/$hn.qcow2 \
 --disk path=$ISOs/drive-ubuntu.iso \
 --network bridge=br0  \
 --network bridge=br1  \
---network bridge=br0  \
+--network bridge=br1  \
 --graphics vnc,listen=0.0.0.0 \
 --noautoconsole \
 --import
