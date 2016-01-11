@@ -1,0 +1,31 @@
+#cloud-config
+
+timezone: Canada/Eastern
+apt_update: true
+hostname: cmp28
+fqdn: cmp28.lab.local
+manage_etc_hosts: true
+package_update: false
+
+users:
+  - name: osu
+    gecos: osu
+    groups: sudo
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    passwd: $6$m/ToT80gpHPZka$2EaO1TYTpEcDKwNe/wBP3jnINtGQxNv0c4AcsTTpKlihHC9I7r/yactnYZER6.yn0jRO8zP9oB8t.TlSz8atp.
+    lock-passwd: false
+
+runcmd:
+ - "echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg"
+ - "sudo dpkg-reconfigure -f noninteractive cloud-init"
+ - "sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config"
+ - service ssh restart
+ - apt-get update -y
+ - apt-get -y install htop git makepp 
+ - su - osu
+ - cd /home/osu
+ - git clone https://github.com/moonbeamzebra/OpenStack-On-Docker.git
+ - echo "user_data finished" > /home/osu/user_data.finished
+
+
