@@ -6,6 +6,7 @@ hostname: api220
 fqdn: api220.lab.local
 manage_etc_hosts: true
 package_update: false
+ssh_pwauth: True
 
 groups:
   - docker
@@ -32,8 +33,6 @@ write_files:
 runcmd:
  - "echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg"
  - "sudo dpkg-reconfigure -f noninteractive cloud-init"
- - "sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config"
- - service ssh restart
  - cat /tmp/fdisk.in | fdisk /dev/vdb
  - mkfs.ext3 /dev/vdb1
  - echo `blkid /dev/vdb1 | cut -f 2 -d ' '`  /var/lib/openstack-mariadb ext4 defaults 0 0 >> /etc/fstab
@@ -43,6 +42,8 @@ runcmd:
  - apt-get update -y
  - apt-get -y install htop git makepp 
  - mkdir /var/lib/openstack-mariadb/mysql
+ - curl -L https://github.com/docker/compose/releases/download/1.5.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+ - chmod +x /usr/local/bin/docker-compose
  - su - osu
  - cd /home/osu
  - git clone https://github.com/moonbeamzebra/OpenStack-On-Docker.git
