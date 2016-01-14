@@ -3,6 +3,7 @@
 timezone: Canada/Eastern
 apt_update: true
 hostname: net221
+fqdn: net221.lab.local
 manage_etc_hosts: true
 package_update: false
 ssh_pwauth: True
